@@ -12,12 +12,12 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-
+@DisplayName("인증 결과를 Map(deserialized json)으로 받으면, 카카오 인증 응답 객체로 변환한다.")
 class KakaoOAuth2ResponseTest {
 
     private final ObjectMapper mapper = new ObjectMapper();
 
-    @DisplayName("인증 결과를 Map(deserialized json)으로 받으면, 카카오 인증 응답 객체로 변환한다.")
+
     @Test
     void givenMapFromJson_whenInstantiating_thenReturnsKakaoResponseObject() throws Exception {
         // Given
