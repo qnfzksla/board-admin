@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/admin/members")
 @Controller /*** 어드민 회원 뷰*/
-public class AdminUserAccountController {
+public class AdminAccountController {
 
     @GetMapping
     public String AdminUser(

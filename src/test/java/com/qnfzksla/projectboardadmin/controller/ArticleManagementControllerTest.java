@@ -1,7 +1,6 @@
 package com.qnfzksla.projectboardadmin.controller;
 
 import com.qnfzksla.projectboardadmin.config.SecurityConfig;
-import com.qnfzksla.projectboardadmin.domain.constant.RoleType;
 import com.qnfzksla.projectboardadmin.dto.ArticleDto;
 import com.qnfzksla.projectboardadmin.dto.UserAccountDto;
 import com.qnfzksla.projectboardadmin.service.ArticleManagementService;
@@ -113,7 +112,6 @@ class ArticleManagementControllerTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
-                Set.of(RoleType.ADMIN),
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"
