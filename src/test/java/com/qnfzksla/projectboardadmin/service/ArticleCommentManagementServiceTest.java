@@ -1,12 +1,10 @@
 package com.qnfzksla.projectboardadmin.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qnfzksla.projectboardadmin.domain.constant.RoleType;
 import com.qnfzksla.projectboardadmin.dto.ArticleCommentDto;
 import com.qnfzksla.projectboardadmin.dto.UserAccountDto;
 import com.qnfzksla.projectboardadmin.dto.properties.ProjectProperties;
 import com.qnfzksla.projectboardadmin.dto.response.ArticleCommentClientResponse;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -22,7 +20,7 @@ import org.springframework.test.web.client.MockRestServiceServer;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
+
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
@@ -172,8 +170,6 @@ public class ArticleCommentManagementServiceTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
-                "pw",
-                Set.of(RoleType.ADMIN),
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"
