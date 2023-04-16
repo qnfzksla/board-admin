@@ -1,23 +1,33 @@
 package com.qnfzksla.projectboardadmin.controller;
 
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
+import com.qnfzksla.projectboardadmin.domain.AdminAccount;
+import com.qnfzksla.projectboardadmin.dto.response.AdminAccountResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/admin/members")
 @Controller /*** 어드민 회원 뷰*/
 public class AdminAccountController {
 
     @GetMapping
-    public String AdminUser(
-            @PageableDefault(size = 10,sort = "createdAt",direction = Sort.Direction.DESC) Pageable pageable,
-            Model model
-
-            ){
+    public String AdminUser(Model model){
         return "admin/members";
     }
+    @ResponseBody
+    @GetMapping("/api/admin/members")
+    public List<AdminAccountResponse> getMembers(){
+        return List.of();
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseBody
+    @DeleteMapping("/api/admin/members/{userId}")
+    public void delete(@PathVariable String userId){
+
+    }
+
 }
