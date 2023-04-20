@@ -16,7 +16,7 @@ public record ArticleClientResponse(
                 new Embedded(List.of()),
                 new Page(1, 0, 1, 0)
         );
-}
+    }
 
     public static ArticleClientResponse of(List<ArticleDto> articles) {
         return new ArticleClientResponse(
