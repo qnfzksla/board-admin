@@ -31,10 +31,9 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 @ActiveProfiles("test")
 @DisplayName("비즈니스 로직 - 게시글 관리")
-public class ArticleManagementServiceTest {
+class ArticleManagementServiceTest {
 
-
-    //    @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
+    @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
     @DisplayName("실제 API 호출 테스트")
     @SpringBootTest
     @Nested
@@ -119,7 +118,7 @@ public class ArticleManagementServiceTest {
             Long articleId = 1L;
             ArticleDto expectedArticle = createArticleDto("게시판", "글");
             server
-                    .expect(requestTo(projectProperties.board().url() + "/api/articles/" + articleId))
+                    .expect(requestTo(projectProperties.board().url() + "/api/articles/" + articleId + "?projection=withUserAccount"))
                     .andRespond(withSuccess(
                             mapper.writeValueAsString(expectedArticle),
                             MediaType.APPLICATION_JSON
@@ -178,4 +177,5 @@ public class ArticleManagementServiceTest {
             );
         }
     }
+
 }

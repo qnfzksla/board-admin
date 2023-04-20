@@ -72,10 +72,10 @@ class JpaRepositoryTest {
 
     @DisplayName("회원 정보 update 테스트")
     @Test
-    void givenAdminAcounts_whenUpdating_thenWorksFine(){
+    void givenAdminAccountAndRoleType_whenUpdating_thenWorksFine(){
 
         //Given
-        AdminAccount adminAccount = adminAccountRepository.getReferenceById("qnfzksla");
+        AdminAccount adminAccount = adminAccountRepository.getReferenceById("uno");
         adminAccount.addRoleType(RoleType.DEVELOPER);
         adminAccount.addRoleTypes(List.of(RoleType.USER,RoleType.USER));
         adminAccount.removeRoleType(RoleType.ADMIN);
@@ -87,7 +87,7 @@ class JpaRepositoryTest {
 
         //Then
         assertThat(updatedAccount)
-                .hasFieldOrPropertyWithValue("userId","qnfzksla")
+                .hasFieldOrPropertyWithValue("userId","uno")
                 .hasFieldOrPropertyWithValue("roleTypes",Set.of(RoleType.DEVELOPER,RoleType.USER));
 
      /**AdminAccountRepository는 SpringData JPA에서 제공하는 JpaRepository 인터페이스를 확장하는 JPA 리포지토리 인터페이스의 인스턴스입니다.
@@ -104,12 +104,12 @@ class JpaRepositoryTest {
 
     @DisplayName("회원 정보 delete 테스트")
     @Test
-    void givenAdminAcounts_whenDeleting_thenWorksFine(){
+    void givenAdminAccounts_whenDeleting_thenWorksFine(){
 
         //Given
         long previousCount = adminAccountRepository.count();
 
-        AdminAccount adminAccount = adminAccountRepository.getReferenceById("qnfzksla");
+        AdminAccount adminAccount = adminAccountRepository.getReferenceById("uno");
 
 
 
