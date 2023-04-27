@@ -44,9 +44,9 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                       /* .mvcMatchers(HttpMethod.POST,"/**").hasAnyRole( rolesAboveManager *//**권한 설정*//*)
-                        .mvcMatchers(HttpMethod.DELETE,"/**").hasAnyRole( rolesAboveManager *//**권한 설정*//*)*/
-                        .anyRequest().permitAll()
+                        .mvcMatchers(HttpMethod.POST,"/**").hasAnyRole( rolesAboveManager /**권한 설정*/)
+                        .mvcMatchers(HttpMethod.DELETE,"/**").hasAnyRole( rolesAboveManager /**권한 설정*/)
+                        .anyRequest().authenticated()
                 )
                 .formLogin(withDefaults())
                 .logout(logout -> logout.logoutSuccessUrl("/"))
