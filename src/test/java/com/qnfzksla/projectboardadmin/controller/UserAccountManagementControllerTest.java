@@ -1,5 +1,6 @@
 package com.qnfzksla.projectboardadmin.controller;
 
+import com.qnfzksla.projectboardadmin.config.GlobalControllerConfig;
 import com.qnfzksla.projectboardadmin.config.SecurityConfig;
 import com.qnfzksla.projectboardadmin.config.SecurityConfigTest;
 import com.qnfzksla.projectboardadmin.dto.UserAccountDto;
@@ -29,7 +30,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 @WithMockUser(username = "tester", roles = "USER")
 @DisplayName("View 컨트롤러 - 회원 관리")
-@Import(SecurityConfigTest.class)
+@Import({SecurityConfigTest.class , GlobalControllerConfig.class})
 @WebMvcTest(UserAccountManagementController.class)
 class UserAccountManagementControllerTest {
 

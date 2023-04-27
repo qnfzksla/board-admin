@@ -1,5 +1,6 @@
 package com.qnfzksla.projectboardadmin.controller;
 
+import com.qnfzksla.projectboardadmin.config.GlobalControllerConfig;
 import com.qnfzksla.projectboardadmin.config.SecurityConfig;
 import com.qnfzksla.projectboardadmin.config.SecurityConfigTest;
 import com.qnfzksla.projectboardadmin.domain.constant.RoleType;
@@ -28,7 +29,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 @DisplayName(" 컨트롤러 - 댓글 관리")
-@Import(SecurityConfigTest.class)
+@Import({SecurityConfigTest.class , GlobalControllerConfig.class})
 @WebMvcTest(ArticleCommentManagementController.class)
 class ArticleCommentManagementControllerTest {
 
