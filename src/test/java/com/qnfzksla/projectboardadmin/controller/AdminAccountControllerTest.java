@@ -2,6 +2,7 @@ package com.qnfzksla.projectboardadmin.controller;
 
 
 
+import com.qnfzksla.projectboardadmin.config.GlobalControllerConfig;
 import com.qnfzksla.projectboardadmin.config.SecurityConfig;
 import com.qnfzksla.projectboardadmin.domain.constant.RoleType;
 import com.qnfzksla.projectboardadmin.dto.AdminAccountDto;
@@ -32,7 +33,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("View 컨트롤러  - 어드민 회원")
-@Import(SecurityConfig.class)
+@Import({SecurityConfig.class, GlobalControllerConfig.class})
 @WebMvcTest(AdminAccountController.class)
 class AdminAccountControllerTest {
 

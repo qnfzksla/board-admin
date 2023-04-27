@@ -1,5 +1,6 @@
 package com.qnfzksla.projectboardadmin.controller;
 
+import com.qnfzksla.projectboardadmin.config.GlobalControllerConfig;
 import com.qnfzksla.projectboardadmin.config.SecurityConfig;
 import com.qnfzksla.projectboardadmin.config.SecurityConfigTest;
 import com.qnfzksla.projectboardadmin.dto.ArticleDto;
@@ -28,8 +29,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 
 @DisplayName("View 컨트롤러 - 게시글 관리")
-@Import(SecurityConfigTest.class)
-@WebMvcTest(ArticleManagementController.class)
+@Import({SecurityConfigTest.class , GlobalControllerConfig.class})
+@WebMvcTest(ArticleManagementController.class )
 class ArticleManagementControllerTest {
 
     private final MockMvc mvc;
