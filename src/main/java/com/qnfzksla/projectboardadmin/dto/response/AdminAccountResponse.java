@@ -24,7 +24,7 @@ public record AdminAccountResponse(
         return AdminAccountResponse.of(
                 dto.userId(),
                 dto.roleTypes().stream()
-                        .map(RoleType::getRoleName)
+                        .map(RoleType::getDescrption)
                         .collect(Collectors.joining(", ")),
                 dto.email(),
                 dto.nickname(),
