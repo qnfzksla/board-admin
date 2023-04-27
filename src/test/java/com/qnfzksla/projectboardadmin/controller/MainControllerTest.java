@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 
@@ -24,6 +25,7 @@ class MainControllerTest {
     public MainControllerTest(@Autowired MockMvc mvc) {
         this.mvc = mvc;
     }
+    @WithMockUser(username = "tester", roles = "USER")
     @DisplayName("[view][GET] 루트 페이지 -> 게시글 관리 페이지 Forwarding")
     @Test
     void givenNothing_whenRequestingRootView_thenForwardsToArticleManagementView() throws Exception{
