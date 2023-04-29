@@ -6,11 +6,11 @@ GitKraken shield
 이 서비스는 패스트캠퍼스의 10개 프로젝트로 완성하는 백엔드 웹개발(Java/Spring) 초격차 패키지 Online 강의의 강의용 프로젝트로 사용되었습니다.
 
 ## 개발 환경
-Intellij IDEA Ultimate 2022.3.1 ~ 2022.4.3
-Java 17
-*Gradle 7.4.1
-*Spring Boot 2.7.0
-*기술 세부 스택
+* Intellij IDEA Ultimate 2022.3.1 ~ 2022.4.3
+* Java 17
+* Gradle 7.4.1
+* Spring Boot 2.7.0
+* 기술 세부 스택
 Spring Boot
 
 *Spring Boot Actuator
